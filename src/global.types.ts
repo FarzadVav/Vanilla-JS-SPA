@@ -2,6 +2,7 @@ export { }
 
 declare global {
   interface Window {
-    submitHandler: (event: MouseEvent) => void;
+    submitHandler: (e: MouseEvent) => void
+    logout: () => void
   }
 }

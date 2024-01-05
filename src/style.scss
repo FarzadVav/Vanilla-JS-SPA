@@ -75,7 +75,7 @@ form {
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  
+
   input,
   button {
     color: white;
@@ -83,7 +83,7 @@ form {
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
   }
-  
+
   button {
     width: max-content;
     margin-top: 0.5rem;
@@ -93,5 +93,25 @@ form {
       background-color: white;
       color: #2a2a2a;
     }
+  }
+}
+
+.user {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem;
+
+  span,
+  button {
+    padding: 0.5rem 1rem;
+  }
+
+  button {
+    background-color: #ff252590;
+    color: white;
+    cursor: pointer;
   }
 }

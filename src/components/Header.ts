@@ -4,19 +4,19 @@ import router from "../utils/router"
 
 const Header = (): string => {
   return (`
-  <header>
-    <ul>${routes.map((route) => `<li><a href="${route.path}" data-link>${route.title}</a></li>`).join("")}</ul>
-    ${App.state.email.length ? `<span>${App.state.email}</span>` : ''}
-  </header>
+    <header>
+      <ul>${routes.map(route => `<li><a href="${route.path}" data-link>${route.title}</a></li>`).join("")}</ul>
+      <span>${App.state.email}</span>
+    </header>
   `)
 }
 
-window.addEventListener("click", (e) => {
+window.addEventListener("click", e => {
   const target = e.target as HTMLLinkElement
 
   if (Object.keys(target.dataset).includes("link")) {
-    e.preventDefault();
-    history.pushState("", "", target.href);
+    e.preventDefault()
+    history.pushState("", "", target.href)
     router()
   }
 })
