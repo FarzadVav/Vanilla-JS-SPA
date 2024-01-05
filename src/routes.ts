@@ -1,3 +1,4 @@
+import Account from "./pages/Account"
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
 
@@ -18,6 +19,11 @@ const routes: routeTypes[] = [
     title: 'Shop',
     element: Shop
   },
+  {
+    path: '/account',
+    title: 'Account',
+    element: Account
+  }
 ]
 
 export default routes

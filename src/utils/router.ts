@@ -1,4 +1,4 @@
-import app from "../app";
+import App from "../App";
 import routes from "../routes";
 
 const root = document.getElementById('root') as HTMLDivElement
@@ -10,11 +10,14 @@ const router = () => {
   if (route) {
     document.title = route.title;
     page = route.element()
-    root.innerHTML = app(page)
+    root.innerHTML = App(page)
   } else {
     history.replaceState("", "", "/")
     router()
   }
 }
+
+window.addEventListener('load', router)
+window.addEventListener("popstate", router)
 
 export default router

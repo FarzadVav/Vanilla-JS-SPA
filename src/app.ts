@@ -1,15 +1,15 @@
 import Header from "./components/Header"
-import router from "./utils/router"
-import "./style.css"
+import "./style.scss"
 
-const app = (page: string): string => {
+const App = (page: string): string => {
   return (`
     ${Header()}
     ${page}
   `)
 }
 
-window.addEventListener('load', router)
-window.addEventListener("popstate", router)
+App.state = {
+  email: ''
+}
 
-export default app
+export default App
