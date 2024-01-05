@@ -1,20 +1,15 @@
 import Header from "./components/Header"
-import "./style.css"
 import router from "./utils/router"
+import "./style.css"
 
-const root = document.getElementById('root') as HTMLDivElement
-
-const app = (): string => {
+const app = (page: string): string => {
   return (`
     ${Header()}
-    ${currentElement}
+    ${page}
   `)
 }
 
-let currentElement = ''
-export const setCurrentElement = (element: string) => {
-  currentElement = element
-  root.innerHTML = app()
-}
-
 window.addEventListener('load', router)
+window.addEventListener("popstate", router)
+
+export default app

@@ -1,34 +1,22 @@
 import routes from "../routes"
-import router from "../utils/router";
+import router from "../utils/router"
 
 const Header = (): string => {
   return (`
-    <header>
-      <ul>
-        ${routes.map(route => (
-    `<li>
-              <a
-                href="${route.path}"
-                data-link
-              >
-                ${route.title}
-              </a>
-            </li>`
-  )).join('')
-    }
-      </ul>
-    </header>
-  `)
+  <header>
+    <ul>${routes.map((route) => `<li><a href="${route.path}" data-link>${route.title}</a></li>`).join("")}</ul>
+  </header>
+`)
 }
 
-window.addEventListener("click", e => {
+window.addEventListener("click", (e) => {
   const target = e.target as HTMLLinkElement
 
-  if (Object.keys(target.dataset).includes('link')) {
+  if (Object.keys(target.dataset).includes("link")) {
     e.preventDefault();
     history.pushState("", "", target.href);
-    router();
+    router()
   }
-});
+})
 
-export default Header
+export default Header;

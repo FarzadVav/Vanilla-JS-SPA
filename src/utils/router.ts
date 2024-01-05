@@ -1,15 +1,19 @@
+import app from "../app";
 import routes from "../routes";
-import { setCurrentElement } from "../app";
+
+const root = document.getElementById('root') as HTMLDivElement
+let page = ''
 
 const router = () => {
   const route = routes.find(route => route.path === location.pathname);
 
   if (route) {
     document.title = route.title;
-    setCurrentElement(route.element())
+    page = route.element()
+    root.innerHTML = app(page)
   } else {
-    history.replaceState("", "", "/");
-    router();
+    history.replaceState("", "", "/")
+    router()
   }
 }
 
