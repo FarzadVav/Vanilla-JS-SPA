@@ -1,3 +1,4 @@
+import authState from "../global/auth"
 import useFirstRun from "../hooks/useFirstRun"
 import router from "../utils/router"
 
@@ -19,9 +20,14 @@ const Shop = (): string => {
       <h1>
         Posts page
       </h1>
-      <div class="boxes-wrapper">
-        ${posts.map(post => (`<div class="post">${post.title}</div>`)).join("")}
-      </div>
+      ${authState.email ? `
+          <div class="boxes-wrapper">
+            ${posts.map(post => (`<div class="post">${post.title}</div>`)).join("")}
+          </div>
+        ` : `
+          <h3>Please login to view posts</h3>
+        `
+    }
     </div>
   `)
 }
