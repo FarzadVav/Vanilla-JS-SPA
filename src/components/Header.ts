@@ -11,14 +11,13 @@ const Header = (): string => {
   `)
 }
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   const email: string = localStorage.getItem('email') || ""
   if (email?.length) authActions.login(email)
 })
 
 window.addEventListener("click", e => {
   const target = e.target as HTMLLinkElement
-
   if (Object.keys(target.dataset).includes("link")) {
     e.preventDefault()
     history.pushState("", "", target.href)
