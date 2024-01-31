@@ -1,15 +1,20 @@
-import App from "../App"
 import routes from "../routes"
+import authState, { authActions } from "../states/auth"
 import router from "../utils/router"
 
 const Header = (): string => {
   return (`
     <header>
       <ul>${routes.map(route => `<li><a href="${route.path}" data-link>${route.title}</a></li>`).join("")}</ul>
-      <span>${App.state.email}</span>
+      <span>${authState.email}</span>
     </header>
   `)
 }
+
+window.addEventListener('load', () => {
+  const email: string = localStorage.getItem('email') || ""
+  if (email?.length) authActions.login(email)
+})
 
 window.addEventListener("click", e => {
   const target = e.target as HTMLLinkElement
