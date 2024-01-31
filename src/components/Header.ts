@@ -1,5 +1,5 @@
 import routes from "../routes"
-import authState, { authActions } from "../states/auth"
+import authState, { authActions } from "../global/auth"
 import router from "../utils/router"
 
 const Header = (): string => {

@@ -1,8 +1,19 @@
+import useFirstRun from "../hooks/useFirstRun"
 import router from "../utils/router"
+
 
 let posts: { title: string }[] = []
 
 const Shop = (): string => {
+  useFirstRun(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(res => res.json())
+      .then(_posts => {
+        posts = _posts
+        router()
+      })
+  })
+
   return (`
     <div>
       <h1>
@@ -14,15 +25,5 @@ const Shop = (): string => {
     </div>
   `)
 }
-
-
-window.addEventListener("load", () => {
-  fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(res => res.json())
-    .then(_posts => {
-      posts = _posts;
-      router()
-    })
-})
 
 export default Shop
