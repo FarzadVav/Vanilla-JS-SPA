@@ -1,6 +1,6 @@
 import authState, { authActions } from "../states/auth"
 
-const Account = (): string => {
+const Account = (): string => { 
   const submitHandler = (event: MouseEvent) => {
     event.preventDefault()
 

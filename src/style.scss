@@ -7,6 +7,7 @@
   padding: 0;
   border: 0;
   outline: 0;
+  transition: all 150ms linear;
 }
 
 body {
@@ -62,7 +63,7 @@ header ul li:last-child {
 }
 
 h1 {
-  margin: 1rem;
+  margin: 1.5rem 3rem;
 }
 
 form {
@@ -113,5 +114,26 @@ form {
     background-color: #ff252590;
     color: white;
     cursor: pointer;
+  }
+}
+
+.boxes-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 3rem;
+}
+
+.post {
+  background-color: #3a3a3a;
+  min-width: 300px;
+  flex: 1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4a4a4a;
   }
 }

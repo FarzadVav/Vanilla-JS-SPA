@@ -1,6 +1,6 @@
 import Account from "./pages/Account"
 import Home from "./pages/Home"
-import Shop from "./pages/Shop"
+import Posts from "./pages/Posts"
 
 type routeTypes = {
   path: string
@@ -15,9 +15,9 @@ const routes: routeTypes[] = [
     element: Home
   },
   {
-    path: '/shop',
-    title: 'Shop',
-    element: Shop
+    path: '/Posts',
+    title: 'Posts',
+    element: Posts
   },
   {
     path: '/account',
