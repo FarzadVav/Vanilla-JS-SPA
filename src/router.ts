@@ -1,5 +1,5 @@
-import routes from "../routes";
-import App from "../App";
+import routes from "./routes";
+import App from "./App";
 
 const router = () => {
   const root = document.getElementById('root') as HTMLDivElement

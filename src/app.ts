@@ -1,4 +1,4 @@
-import router from "./utils/router"
+import router from "./router"
 import Header from "./components/Header"
 import "./style.scss"
 
