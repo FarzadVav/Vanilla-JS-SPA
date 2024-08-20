@@ -21,11 +21,14 @@ const Account = (): string => {
   return (`
     <div class="page-wrapper">
       <h1>
-        Your account :)
+        Your account ${App.state.email}
       </h1>
       ${App.state.email ? (`
-        <div class="login">
-          <span>your is login :)</span>
+        <div>
+          <span>your is login</span>
+          ${" "}
+          <span>:)</span>
+          ${" "}
           <button onClick="logout()">logout</button>
         </div>
       `) : (`
