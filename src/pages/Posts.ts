@@ -1,5 +1,5 @@
 import router from "../utils/router"
-import App from "../app"
+import App from "../App"
 
 let posts: { title: string }[] = []
 

@@ -1,5 +1,5 @@
 import routes from "../routes"
-import App from "../app"
+import App from "../App"
 
 const Header = (): string => {
   return (`
