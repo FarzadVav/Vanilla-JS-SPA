@@ -1,4 +1,4 @@
-import authState, { authActions } from "../global/auth"
+import App from "../app"
 
 const Account = (): string => {
   const submitHandler = (event: MouseEvent) => {
@@ -8,13 +8,13 @@ const Account = (): string => {
     const input = target.querySelector('input') as HTMLInputElement
 
     if (input.value.length) {
-      authActions.login(input.value)
+      App.state.login(input.value)
     } else {
       alert('please write your email')
     }
   }
 
-  const logout = authActions.logout
+  const logout = App.state.logout
 
   window.submitHandler = submitHandler
   window.logout = logout
@@ -24,18 +24,20 @@ const Account = (): string => {
       <h1>
         Your account :)
       </h1>
-      ${authState.email
-      ? (`<div class="user">
-            <span>your is login :)</span>
-            <button onClick="logout()">logout</button>
-          </div>`)
-      : (`<form onSubmit="submitHandler(event)">
-            <label for="input">please write your email</label>
-            <input type="email" id="input" placeholder="example@gmail.com" />
-            <button type="submit">
-              submit
-            </button>
-          </form>`)}
+      ${App.state.email ? (`
+        <div class="user">
+          <span>your is login :)</span>
+          <button onClick="logout()">logout</button>
+        </div>  
+      `) : (`
+        <form onSubmit="submitHandler(event)">
+          <label for="input">please write your email</label>
+          <input type="email" id="input" placeholder="example@gmail.com" />
+          <button type="submit">
+            submit
+          </button>
+        </form>  
+      `)}
     </div>
   `)
 }

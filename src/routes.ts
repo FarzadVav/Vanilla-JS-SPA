@@ -10,18 +10,18 @@ type routeTypes = {
 
 const routes: routeTypes[] = [
   {
-    path: '/',
-    title: 'Home',
+    path: "/",
+    title: "Home",
     element: Home
   },
   {
-    path: '/Posts',
-    title: 'Posts',
+    path: "/Posts",
+    title: "Posts",
     element: Posts
   },
   {
-    path: '/account',
-    title: 'Account',
+    path: "/account",
+    title: "Your account",
     element: Account
   }
 ]
