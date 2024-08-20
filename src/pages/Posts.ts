@@ -5,16 +5,16 @@ let posts: { title: string }[] = []
 
 const Posts = (): string => {
   return (`
-    <div>
+    <div class="page-wrapper">
       <h1>
         Posts page
       </h1>
       ${App.state.email ? (`
-        <div class="boxes-wrapper">
+        <div class="posts-wrapper">
           ${posts.map(post => (`<div class="post">${post.title}</div>`)).join("")}
         </div>
       `) : (`
-        <h3>Please login to view posts</h3>
+        <p>Please login to view posts</p>
       `)}
     </div>
   `)

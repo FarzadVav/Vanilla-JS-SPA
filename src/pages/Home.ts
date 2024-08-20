@@ -1,6 +1,6 @@
 const Home = (): string => {
   return (`
-    <div>
+    <div class="page-wrapper">
       <h1>
         Home page
       </h1>

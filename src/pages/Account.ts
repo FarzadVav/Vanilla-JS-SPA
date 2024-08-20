@@ -15,20 +15,19 @@ const Account = (): string => {
   }
 
   const logout = App.state.logout
-
   window.submitHandler = submitHandler
   window.logout = logout
 
   return (`
-    <div>
+    <div class="page-wrapper">
       <h1>
         Your account :)
       </h1>
       ${App.state.email ? (`
-        <div class="user">
+        <div class="login">
           <span>your is login :)</span>
           <button onClick="logout()">logout</button>
-        </div>  
+        </div>
       `) : (`
         <form onSubmit="submitHandler(event)">
           <label for="input">please write your email</label>
@@ -36,7 +35,7 @@ const Account = (): string => {
           <button type="submit">
             submit
           </button>
-        </form>  
+        </form>
       `)}
     </div>
   `)
